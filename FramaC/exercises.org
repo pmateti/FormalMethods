@@ -1,0 +1,62 @@
+# -*- mode: org -*-
+#+DATE: 2017-06-08
+#+TITLE:  Frama-C Exercises
+#+AUTHOR: Prabhaker Mateti
+#+HTML_LINK_HOME: ../../Top/index.html
+#+HTML_LINK_UP: ../
+#+HTML_HEAD: <style> P,li {text-align: justify} code {color: brown;} @media screen {BODY {margin: 10%} }</style>
+#+BIND: org-html-preamble-format (("en" "<a href=\"../../\"> ../../</a>"))
+#+BIND: org-html-postamble-format (("en" "<hr size=1>Copyright &copy; 2017 <a href=\"http://www.wright.edu/~pmateti\">www.wright.edu/~pmateti</a> &bull; %d"))
+#+STARTUP:showeverything
+#+OPTIONS: toc:2
+
+* What is Frama-C
+
+1. [[./index.org]]
+
+* Small Examples
+
+1. https://frama-c.com/acsl_tutorial_index.html Introduces ACSL.
+
+** Sorting
+
+1. https://frama-c.com/jessie_tutorial_index.html Includes Sort
+   examples
+
+** C Standard Library
+
+1. Jochen Burghardt Jens Gerlach Timon Lapawczyk, Former Authors:
+   Andreas Carben Liangliang Gu Kerstin Hartig Hans Pohl Juan Soto Kim
+   Völlinger, [[https://www.cs.umd.edu/class/spring2016/cmsc838G/frama-c/ACSL-by-Example-12.1.0.pdf][ACSL By Example: Towards a Verified C Standard Library]]",
+   155pp, 2016.
+
+* Sizeable Examples
+
+** Linux Kernel Components
+
+1. Alexey Khoroshilov Mikhail Mandrykin, [[https://frama-c.com/download/framaCDay/FCSD17/talk/06_Khoroshilov_Mandrykin.pdf][Specifying and Proving
+   Correctness of Linux Kernel Components with ACSL]], 35+ slides, 2017,
+   Institute for System Programming of the Russian Academy of
+   Sciences; {pm: Has several Frama-C examples}
+
+** Frama-C and Heartbleed
+
+1. http://www.pl-enthusiast.net/2014/07/01/how-did-heartbleed-remain-undiscovered-and-what-should-we-do-about-it/
+
+
+* Exercises
+
+** QuickSort
+1. QuickSort in Frama-C/ACSL To Be Done by 
+1. QuickSort and the Partitioning Idea: Algorithm explanation
+1. Assertions
+1. QuickSort written in C++
+1. [[../Examples/QuickSort/index.org]] all the above
+
+* References
+
+
+* End
+# Local variables:q
+# after-save-hook: org-html-export-to-html
+# end:

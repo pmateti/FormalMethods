@@ -1,0 +1,88 @@
+
+
+% date
+Mon Jul  3 22:55:27 EDT 2017
+/usr/local/linux
+
+% time make bzImage modules > /tmp/make-bz-mods.log &
+[1] 27003
+
+real    145m31.697s
+user    132m31.388s
+sys     13m47.980s
+
+/usr/local/linux
+% 
+/usr/local/linux
+% fs/jffs2/xattr.c: In function ‘jffs2_build_xattr_subsystem’:
+fs/jffs2/xattr.c:887:1: warning: the frame size of 1128 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+ }
+ ^
+drivers/cpufreq/cpufreq_ondemand.c: In function ‘od_set_powersave_bias’:
+drivers/cpufreq/cpufreq_ondemand.c:461:1: warning: the frame size of 1032 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+ }
+ ^
+drivers/hv/channel_mgmt.c: In function ‘init_vp_index’:
+drivers/hv/channel_mgmt.c:687:1: warning: the frame size of 1032 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+ }
+ ^
+drivers/infiniband/hw/i40iw/i40iw_main.c: In function ‘i40iw_configure_ceq_vector’:
+drivers/infiniband/hw/i40iw/i40iw_main.c:710:1: warning: the frame size of 1032 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+ }
+ ^
+drivers/isdn/hardware/eicon/diddfunc.c: In function ‘connect_didd’:
+drivers/isdn/hardware/eicon/diddfunc.c:77:1: warning: the frame size of 1152 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+ }
+ ^
+drivers/isdn/hardware/eicon/divasfunc.c: In function ‘connect_didd’:
+drivers/isdn/hardware/eicon/divasfunc.c:192:1: warning: the frame size of 1152 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+ }
+ ^
+drivers/isdn/hardware/eicon/mntfunc.c: In function ‘connect_didd’:
+drivers/isdn/hardware/eicon/mntfunc.c:112:1: warning: the frame size of 1152 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+ }
+ ^
+drivers/isdn/hardware/eicon/idifunc.c: In function ‘connect_didd’:
+drivers/isdn/hardware/eicon/idifunc.c:223:1: warning: the frame size of 1152 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+ }
+ ^
+drivers/isdn/hardware/eicon/capifunc.c: In function ‘divacapi_connect_didd’:
+drivers/isdn/hardware/eicon/capifunc.c:1094:1: warning: the frame size of 1152 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+ }
+ ^
+drivers/isdn/hardware/eicon/message.c: In function ‘sig_ind’:
+drivers/isdn/hardware/eicon/message.c:6113:1: warning: the frame size of 1104 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+ }
+ ^
+drivers/net/ethernet/neterion/vxge/vxge-main.c: In function ‘VXGE_COMPLETE_VPATH_TX.isra.37’:
+drivers/net/ethernet/neterion/vxge/vxge-main.c:119:1: warning: the frame size of 1048 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+ }
+ ^
+drivers/scsi/storvsc_drv.c: In function ‘get_og_chn’:
+drivers/scsi/storvsc_drv.c:1299:1: warning: the frame size of 1032 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+ }
+ ^
+drivers/scsi/storvsc_drv.c: In function ‘storvsc_do_io’:
+drivers/scsi/storvsc_drv.c:1383:1: warning: the frame size of 1032 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+ }
+ ^
+
+/usr/local/linux
+% jobs
+[1]+  Running                 time make bzImage modules > /tmp/make-bz-mods.log &
+/usr/local/linux
+% drivers/vhost/scsi.c: In function ‘vhost_scsi_flush’:
+drivers/vhost/scsi.c:1175:1: warning: the frame size of 1032 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+ }
+ ^
+net/openvswitch/datapath.c: In function ‘ovs_flow_cmd_set’:
+net/openvswitch/datapath.c:1210:1: warning: the frame size of 1056 bytes is larger than 1024 bytes [-Wframe-larger-than=]
+ }
+ ^
+
+real    145m31.697s
+user    132m31.388s
+sys     13m47.980s
+
+[1]+  Done                    time make bzImage modules > /tmp/make-bz-mods.log
+/usr/local/linux

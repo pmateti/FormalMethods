@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Frama-C Plugins</title>
+<!-- 2017-07-04 Tue 20:20 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Prabhaker Mateti" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<style> P,li {text-align: justify} code {color: brown;} @media screen {BODY {margin: 10%} }</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="../"> UP </a>
+ |
+ <a accesskey="H" href="../../Top/index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<a href="../../"> ../../</a>
+</div>
+<div id="content">
+<h1 class="title">Frama-C Plugins</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Plugin Architecture</a></li>
+<li><a href="#sec-2">2. Frama-C++</a></li>
+<li><a href="#sec-3">3. Value Analysis</a></li>
+<li><a href="#sec-4">4. Weakest Precondition</a></li>
+<li><a href="#sec-5">5. Jesse</a></li>
+<li><a href="#sec-6">6. Slicing</a></li>
+<li><a href="#sec-7">7. Astraver</a></li>
+<li><a href="#sec-8">8. Aorai</a></li>
+<li><a href="#sec-9">9. References</a></li>
+<li><a href="#sec-10">10. End</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Plugin Architecture</h2>
+<div class="outline-text-2" id="text-1">
+<ol class="org-ol">
+<li><a href="https://frama-c.com/plugins.html">https://frama-c.com/plugins.html</a> "Frama-C is organized with a
+plug-in architecture (comparable to that of the Gimp or Eclipse). A
+common kernel centralizes information and conducts the
+analysis. Plug-ins interact with each other through interfaces
+defined by the kernel. This makes for robustness in the development
+of Frama-C while allowing a wide functionality spectrum. ;; Frama-C
+is extensible. It contains several ready-to-use plug-ins for the
+static analysis of C code, but more importantly, any new plug-in
+may use the results or functionalities provided by the existing
+plug-ins. This allows very powerful plug-ins to be written with
+relatively little effort. "
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Frama-C++</h2>
+<div class="outline-text-2" id="text-2">
+<ol class="org-ol">
+<li><a href="https://frama-c.com/frama-clang.html">https://frama-c.com/frama-clang.html</a> "Frama-Clang is a plugin that
+allows Frama-C to take as input C++ programs. As its name implies,
+it is based on the clang compiler, the C/C++/Objective-C front-end
+of the llvm platform. More precisely Frama-Clang is composed of two
+parts: a clang plugin (written in C++) that produces a simplified
+version of the clang AST, and a normal Frama-C plugin that takes as
+input this simplified version an produces a normal Frama-C AST."
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Value Analysis</h2>
+<div class="outline-text-2" id="text-3">
+<ol class="org-ol">
+<li><a href="https://frama-c.com/value.html">https://frama-c.com/value.html</a> "Evolved Value analysis (EVA) plug-in
+The Evolved Value analysis plug-in automatically computes variation
+domains for the variables of the program. "
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Weakest Precondition</h2>
+<div class="outline-text-2" id="text-4">
+<ol class="org-ol">
+<li><a href="https://frama-c.com/wp.html">https://frama-c.com/wp.html</a> "The WP plug-in implements a weakest
+precondition calculus for ACSL annotations through C programs."
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Jesse</h2>
+<div class="outline-text-2" id="text-5">
+<ol class="org-ol">
+<li><a href="https://frama-c.com/jessie.html">https://frama-c.com/jessie.html</a> "The Jessie plug-in allows deductive
+verification of C programs annotated with ACSL.  It uses internally
+the languages and tools of the WHY platform. The generated
+verification conditions can be submitted to external automatic
+provers such as Simplify, Alt-Ergo, Z3, Yices, CVC3. "
+</li>
+
+<li>Why3:: Nikolai Kosmatov, Claude March´e, Yannick Moy, Julien
+Signoles.  Static versus Dynamic Verification in Why3, Frama-C and
+SPARK 2014.  <a href="https://hal.inria.fr/hal-01344110/document">https://hal.inria.fr/hal-01344110/document</a> 7th
+International Symposium on Leveraging Applications,
+Corfu, Greece.  Springer, pp.16,  Oct 2016.
+</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Slicing</h2>
+<div class="outline-text-2" id="text-6">
+<ol class="org-ol">
+<li><a href="http://web.cs.iastate.edu/~weile/cs513x/5.DependencySlicing.pdf">http://web.cs.iastate.edu/~weile/cs513x/5.DependencySlicing.pdf</a>
+Lecture 5. Program Dependencies and Program Slicing Wei Le 2016.3;
+67 slides
+</li>
+
+<li><a href="http://mei.di.uminho.pt/sites/default/files/dissertacoes/eeum_di_dissertacao_pg23208.pdf">http://mei.di.uminho.pt/sites/default/files/dissertacoes/eeum_di_dissertacao_pg23208.pdf</a>
+Master Course in Computing Engineering Jose Pinheiro Departamento
+de Informatica - Universidade do Minho ´ Exploring Frama-C to
+improve Assertion-based Slicing Supervised by: Pedro Rangel
+Henriques Daniela da Cruz Braga, May 17, 2015
+</li>
+
+<li><a href="https://stackoverflow.com/questions/17572319/">https://stackoverflow.com/questions/17572319/</a>
+   understanding-frama-c-slicer-results
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Astraver</h2>
+<div class="outline-text-2" id="text-7">
+<ol class="org-ol">
+<li><a href="https://forge.ispras.ru/projects/astraver/wiki">https://forge.ispras.ru/projects/astraver/wiki</a> Deductive
+Verification Tools for Linux Kernel; Installation
+</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Aorai</h2>
+<div class="outline-text-2" id="text-8">
+<ol class="org-ol">
+<li><a href="https://frama-c.com/download/frama-c-aorai-manual.pdf">https://frama-c.com/download/frama-c-aorai-manual.pdf</a> LTL to ACSL
+</li>
+<li>Linear Temporal Logic (LTL)
+</li>
+<li><a href="http://www.cds.caltech.edu/~murray/courses/afrl-sp12/L3_ltl-24Apr12.pdf">http://www.cds.caltech.edu/~murray/courses/afrl-sp12/L3_ltl-24Apr12.pdf</a>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> References</h2>
+<div class="outline-text-2" id="text-9">
+<ol class="org-ol">
+<li>Specifying and Proving Correctness of Linux Kernel Components with
+ACSL, <a href="https://frama-c.com/download/framaCDay/FCSD17/talk/06_Khoroshilov_Mandrykin.pdf">PDF</a>, 35+ slides, 2017, Alexey Khoroshilov Mikhail Mandrykin,
+Institute for System Programming of the Russian Academy of
+Sciences, 
+</li>
+
+<li><a href="http://www.cs.cmu.edu/~drl/teaching/oplss13/">http://www.cs.cmu.edu/~drl/teaching/oplss13/</a> Programming and
+Proving in Agda, OPLSS 2013
+</li>
+
+<li><a href="http://wiki.portal.chalmers.se/agda/pmwiki.php?n=Main.Documentation">http://wiki.portal.chalmers.se/agda/pmwiki.php?n=Main.Documentation</a> Agda
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> End</h2>
+<div class="outline-text-2" id="text-10">
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr size=1>Copyright &copy; 2017 <a href="http://www.wright.edu/~pmateti">www.wright.edu/~pmateti</a> &bull; 2017-06-08
+</div>
+</body>
+</html>

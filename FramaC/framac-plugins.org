@@ -1,0 +1,106 @@
+# -*- mode: org -*-
+#+DATE: 2017-06-08
+#+TITLE:  Frama-C Plugins
+#+AUTHOR: Prabhaker Mateti
+#+HTML_LINK_HOME: ../../Top/index.html
+#+HTML_LINK_UP: ../
+#+HTML_HEAD: <style> P,li {text-align: justify} code {color: brown;} @media screen {BODY {margin: 10%} }</style>
+#+BIND: org-html-preamble-format (("en" "<a href=\"../../\"> ../../</a>"))
+#+BIND: org-html-postamble-format (("en" "<hr size=1>Copyright &copy; 2017 <a href=\"http://www.wright.edu/~pmateti\">www.wright.edu/~pmateti</a> &bull; %d"))
+#+STARTUP:showeverything
+#+OPTIONS: toc:2
+
+* Plugin Architecture
+
+1. https://frama-c.com/plugins.html "Frama-C is organized with a
+   plug-in architecture (comparable to that of the Gimp or Eclipse). A
+   common kernel centralizes information and conducts the
+   analysis. Plug-ins interact with each other through interfaces
+   defined by the kernel. This makes for robustness in the development
+   of Frama-C while allowing a wide functionality spectrum. ;; Frama-C
+   is extensible. It contains several ready-to-use plug-ins for the
+   static analysis of C code, but more importantly, any new plug-in
+   may use the results or functionalities provided by the existing
+   plug-ins. This allows very powerful plug-ins to be written with
+   relatively little effort. "
+
+* Frama-C++
+
+1. https://frama-c.com/frama-clang.html "Frama-Clang is a plugin that
+   allows Frama-C to take as input C++ programs. As its name implies,
+   it is based on the clang compiler, the C/C++/Objective-C front-end
+   of the llvm platform. More precisely Frama-Clang is composed of two
+   parts: a clang plugin (written in C++) that produces a simplified
+   version of the clang AST, and a normal Frama-C plugin that takes as
+   input this simplified version an produces a normal Frama-C AST."
+
+* Value Analysis
+
+1. https://frama-c.com/value.html "Evolved Value analysis (EVA) plug-in
+   The Evolved Value analysis plug-in automatically computes variation
+   domains for the variables of the program. "
+
+* Weakest Precondition
+
+1. https://frama-c.com/wp.html "The WP plug-in implements a weakest
+   precondition calculus for ACSL annotations through C programs."
+
+* Jesse
+
+1. https://frama-c.com/jessie.html "The Jessie plug-in allows deductive
+   verification of C programs annotated with ACSL.  It uses internally
+   the languages and tools of the WHY platform. The generated
+   verification conditions can be submitted to external automatic
+   provers such as Simplify, Alt-Ergo, Z3, Yices, CVC3. "
+
+1. Why3:: Nikolai Kosmatov, Claude March´e, Yannick Moy, Julien
+   Signoles.  Static versus Dynamic Verification in Why3, Frama-C and
+   SPARK 2014.  https://hal.inria.fr/hal-01344110/document 7th
+   International Symposium on Leveraging Applications,
+   Corfu, Greece.  Springer, pp.16,  Oct 2016.
+
+
+* Slicing
+
+1. http://web.cs.iastate.edu/~weile/cs513x/5.DependencySlicing.pdf
+   Lecture 5. Program Dependencies and Program Slicing Wei Le 2016.3;
+   67 slides
+
+1. http://mei.di.uminho.pt/sites/default/files/dissertacoes/eeum_di_dissertacao_pg23208.pdf
+   Master Course in Computing Engineering Jose Pinheiro Departamento
+   de Informatica - Universidade do Minho ´ Exploring Frama-C to
+   improve Assertion-based Slicing Supervised by: Pedro Rangel
+   Henriques Daniela da Cruz Braga, May 17, 2015
+   
+1. https://stackoverflow.com/questions/17572319/
+   understanding-frama-c-slicer-results
+
+* Astraver
+
+1. https://forge.ispras.ru/projects/astraver/wiki Deductive
+   Verification Tools for Linux Kernel; Installation
+
+
+* Aorai
+
+1. https://frama-c.com/download/frama-c-aorai-manual.pdf LTL to ACSL
+1. Linear Temporal Logic (LTL)
+1. http://www.cds.caltech.edu/~murray/courses/afrl-sp12/L3_ltl-24Apr12.pdf
+
+* References
+
+1. Specifying and Proving Correctness of Linux Kernel Components with
+   ACSL, [[https://frama-c.com/download/framaCDay/FCSD17/talk/06_Khoroshilov_Mandrykin.pdf][PDF]], 35+ slides, 2017, Alexey Khoroshilov Mikhail Mandrykin,
+   Institute for System Programming of the Russian Academy of
+   Sciences, 
+
+1. http://www.cs.cmu.edu/~drl/teaching/oplss13/ Programming and
+   Proving in Agda, OPLSS 2013
+
+1. http://wiki.portal.chalmers.se/agda/pmwiki.php?n=Main.Documentation Agda
+
+* End
+# Local variables:
+# after-save-hook: org-html-export-to-html
+# end:
+

@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Frama-C</title>
+<!-- 2017-07-03 Mon 15:48 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Prabhaker Mateti" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<style> P,li {text-align: justify} code {color: brown;} @media screen {BODY {margin: 10%} }</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="../"> UP </a>
+ |
+ <a accesskey="H" href="../../Top/index.html"> HOME </a>
+</div><div id="preamble" class="status">
+<a href="../../"> ../../</a>
+</div>
+<div id="content">
+<h1 class="title">Frama-C</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. What is Frama-C?</a></li>
+<li><a href="#sec-2">2. ACSL</a>
+<ul>
+<li><a href="#sec-2-1">2.1. A Quick Example</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Plugins</a></li>
+<li><a href="#sec-4">4. Examples and Exercises</a></li>
+<li><a href="#sec-5">5. Perspective</a></li>
+<li><a href="#sec-6">6. References</a></li>
+<li><a href="#sec-7">7. End</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> What is Frama-C?</h2>
+<div class="outline-text-2" id="text-1">
+<ol class="org-ol">
+<li><a href="http://frama-c.com">http://frama-c.com</a> Frama-C is a suite of tools dedicated to the
+compile-time analysis of the source code written in C/C++.
+Assertions are written by the programs.  Frama-C can then generate
+math logic formaulae whose proofs imply the correctness of
+programs.  Proofs are carried out by mechanized theorem provers.
+<ol class="org-ol">
+<li>Installing <a href="https://frama-c.com/install-aluminium-20160501.html">Frama-C</a>; <a href="https://opam.ocaml.org/">https://opam.ocaml.org/</a>;
+<a href="http://opam.ocaml.org/doc/Install.html">http://opam.ocaml.org/doc/Install.html</a>;
+</li>
+<li>QA  <a href="https://stackoverflow.com/tags/frama-c/">https://stackoverflow.com/tags/frama-c/</a>;
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> ACSL</h2>
+<div class="outline-text-2" id="text-2">
+<ol class="org-ol">
+<li>ANSI/ISO C Specification Language
+</li>
+</ol>
+</div>
+
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> A Quick Example</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="org-src-container">
+
+<pre class="src src-c">/*@ requires \valid(a) &amp;&amp; \valid(b);
+  @ ensures A: *a == \old(*b) ;
+  @ ensures B: *b == \old(*a) ;
+  @ assigns *a,*b ;
+  @*/
+void swap(int *a,int *b)
+{
+  int tmp = *a ;
+  *a = *b ;
+  *b = tmp ;
+}
+</pre>
+</div>
+
+<ol class="org-ol">
+<li><code>requires \valid(a) &amp;&amp; \valid(b);</code> entry assertion (also called pre
+condition)
+</li>
+
+<li><code>ensures A: *a =</code> <code>\old(*b) ;</code> exit assertion  (also called post
+condition)
+</li>
+<li><code>assigns x;</code> The value of x at exit may be different from that at entry.
+</li>
+<li><code>\valid(x)</code> builtin predicate: The value x is valid
+</li>
+<li><code>\old(x)</code>  builtin : The value x had at entry
+</li>
+</ol>
+
+
+
+<ol class="org-ol">
+<li>Alexey Khoroshilov Mikhail Mandrykin, <a href="https://frama-c.com/download/framaCDay/FCSD17/talk/06_Khoroshilov_Mandrykin.pdf">Specifying and Proving
+Correctness of Linux Kernel Components with ACSL</a>, 35+ slides, 2017,
+Institute for System Programming of the Russian Academy of
+Sciences; {pm: Has several Frama-C examples}
+</li>
+
+<li><a href="https://frama-c.com/download/acsl-tutorial.pdf">https://frama-c.com/download/acsl-tutorial.pdf</a>
+</li>
+
+<li>Jochen Burghardt Jens Gerlach Timon Lapawczyk, Former Authors:
+Andreas Carben Liangliang Gu Kerstin Hartig Hans Pohl Juan Soto Kim
+Völlinger, <a href="https://www.cs.umd.edu/class/spring2016/cmsc838G/frama-c/ACSL-by-Example-12.1.0.pdf">ACSL By Example: Towards a Verified C Standard Library</a>",
+155pp, 2016.
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Plugins</h2>
+<div class="outline-text-2" id="text-3">
+<ol class="org-ol">
+<li><a href="../FramaC/framac-plugins.html">../FramaC/framac-plugins.html</a> Table of Contents
+</li>
+<li>Plugin Architecture
+</li>
+<li>Frama-C++
+</li>
+<li>Value Analysis
+</li>
+<li>Weakest Preconditions
+</li>
+<li>Jesse: verification tool for C programs; front end for "Why"
+</li>
+<li>Astraver
+</li>
+<li>Why and <a href="http://why3.lri.fr/">Why3</a>: proving tools
+</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Examples and Exercises</h2>
+<div class="outline-text-2" id="text-4">
+<ol class="org-ol">
+<li><a href="../FramaC/exercises.html">../FramaC/exercises.html</a> 
+</li>
+<li><a href="https://rv2016.imag.fr/wp-content/uploads/2016/10/Tutorial-Kosmatov-Signoles.pdf">https://rv2016.imag.fr/wp-content/uploads/2016/10/Tutorial-Kosmatov-Signoles.pdf</a>
+Frama-C A Collaborative Framework for C Code Verification Tutorial
+at RV 2016 Nikolai Kosmatov, Julien Signoles Madrid, September
+27th, 2016
+</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Perspective</h2>
+<div class="outline-text-2" id="text-5">
+<ol class="org-ol">
+<li><a href="http://www.spark-2014.org/uploads/itp_2014_r610.pdf">http://www.spark-2014.org/uploads/itp_2014_r610.pdf</a> 25+ slides; "Are we there
+yet? 20 Years of industrial theorem proving with Spark",  July 15,
+2014
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> References</h2>
+<div class="outline-text-2" id="text-6">
+<ol class="org-ol">
+<li><a href="https://www.cs.purdue.edu/homes/rompf/papers/amin-popl17b.pdf">https://www.cs.purdue.edu/homes/rompf/papers/amin-popl17b.pdf</a>
+LMS-Verify: Abstraction without Regret for Verified Systems
+Programming Nada Amin∗ Tiark Rompf † ∗EPFL: {first.last}@epfl.ch †
+Purdue University: {first}@purdue.edu
+</li>
+
+<li><a href="https://frama-c.com/FCSD17.html">https://frama-c.com/FCSD17.html</a> Frama-C &amp; SPARK Day 2017: Deductive
+Verification in Frama-C and SPARK 2014: Past, Present and Future,
+and other papers
+</li>
+
+<li><a href="http://www.spark-2014.org/">http://www.spark-2014.org/</a> About SPARK, Proof in Use,
+</li>
+</ol>
+<p>
+<a href="http://www.spark-2014.org/entries/detail/applied-formal-logic-searching-in-strings">http://www.spark-2014.org/entries/detail/applied-formal-logic-searching-in-strings</a>
+</p>
+
+<ol class="org-ol">
+<li><a href="http://www.cs.cmu.edu/~drl/teaching/oplss13/">http://www.cs.cmu.edu/~drl/teaching/oplss13/</a> Programming and
+Proving in Agda, OPLSS 2013
+</li>
+<li><a href="http://wiki.portal.chalmers.se/agda/pmwiki.php?n=Main.Documentation">http://wiki.portal.chalmers.se/agda/pmwiki.php?n=Main.Documentation</a> Agda
+</li>
+
+<li><a href="http://krakatoa.lri.fr/">http://krakatoa.lri.fr/</a> Krakatoa is a verification tool for Java programs
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> End</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr size=1>Copyright &copy; 2017 <a href="http://www.wright.edu/~pmateti">www.wright.edu/~pmateti</a> &bull; 2017-06-08
+</div>
+</body>
+</html>

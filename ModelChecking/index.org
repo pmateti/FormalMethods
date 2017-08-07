@@ -1,0 +1,50 @@
+# -*- mode: org -*-
+#+DATE: 2017-06-08
+#+TITLE:  Model Checking
+#+AUTHOR: Prabhaker Mateti
+#+HTML_LINK_HOME: ../../Top/index.html
+#+HTML_LINK_UP: ../
+#+HTML_HEAD: <style> P,li {text-align: justify} code {color: brown;} @media screen {BODY {margin: 10%} }</style>
+#+BIND: org-html-preamble-format (("en" "<a href=\"../../\"> ../../</a>"))
+#+BIND: org-html-postamble-format (("en" "<hr size=1>Copyright &copy; 2017 <a href=\"http://www.wright.edu/~pmateti\">www.wright.edu/~pmateti</a> &bull; %d"))
+#+STARTUP:showeverything
+#+OPTIONS: toc:2
+
+* What is Model Checking?
+
+1. A paragraph long def won't do.
+1. Mordechai (Moti) Ben-Ari, A Primer on Model Checking, [[http://spinroot.com/spin/Doc/p40-ben-ari.pdf][PDF]] 8pp, ACM
+   InRoads, 2010.
+
+* How Does Model Checking relate to Axiomatics?
+
+1. [[../../Top/TBD.html]]
+
+* Model Checking Tools
+
+1. [[../SPIN][SPIN]] Gerard J. Holzmann. The Spin Model Checker: Primer and
+   Reference Manual. AddisonWesley, Boston MA, 2004.
+   1. iSPIN The easiest way to get started with Spin is to use the
+      graphical interface =ispin=.
+   2. http://spinroot.com/spin/Man/README.html
+
+2. [[http://nusmv.fbk.eu/][NuSMV]] Alessandro Cimatti, Edmund M. Clarke, Enrico Giunchiglia,
+   Fausto Giunchiglia, Marco Pistore, Marco Roveri, Roberto
+   Sebastiani, and Armando Tacchella. NuSMV 2: An opensource tool for
+   symbolic model checking. In CAV ‘02: Proceedings of the 14th
+   International Conference on Computer Aided Verifi cation, pages
+   359–364, London, UK, 2002. Springer-Verlag
+   1. http://nusmv.fbk.eu/NuSMV/download/getting-v2.html
+   2. http://nusmv.fbk.eu/#Other_projects
+
+* References
+
+1. Zohar Manna and Amir Pnueli. The Temporal Logic of Reactive and
+   Concurrent Systems. Volume I: Specifi cation. Springer-Verlag, New
+   York, 1992. (ii) The Temporal Verifi cation of Reactive
+   Systems. Volume II: Safety. Springer-Verlag, New York, 1995.
+
+* End
+# Local variables:
+# after-save-hook: org-html-export-to-html
+# end:

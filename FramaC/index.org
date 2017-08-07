@@ -1,0 +1,119 @@
+# -*- mode: org -*-
+#+DATE: 2017-06-08
+#+TITLE:  Frama-C
+#+AUTHOR: Prabhaker Mateti
+#+HTML_LINK_HOME: ../../Top/index.html
+#+HTML_LINK_UP: ../
+#+HTML_HEAD: <style> P,li {text-align: justify} code {color: brown;} @media screen {BODY {margin: 10%} }</style>
+#+BIND: org-html-preamble-format (("en" "<a href=\"../../\"> ../../</a>"))
+#+BIND: org-html-postamble-format (("en" "<hr size=1>Copyright &copy; 2017 <a href=\"http://www.wright.edu/~pmateti\">www.wright.edu/~pmateti</a> &bull; %d"))
+#+STARTUP:showeverything
+#+OPTIONS: toc:2
+
+
+* What is Frama-C?
+
+1. [[http://frama-c.com]] Frama-C is a suite of tools dedicated to the
+   compile-time analysis of the source code written in C/C++.
+   Assertions are written by the programs.  Frama-C can then generate
+   math logic formaulae whose proofs imply the correctness of
+   programs.  Proofs are carried out by mechanized theorem provers.
+   1. Installing [[https://frama-c.com/install-aluminium-20160501.html][Frama-C]]; https://opam.ocaml.org/;
+      http://opam.ocaml.org/doc/Install.html;
+   2. QA  https://stackoverflow.com/tags/frama-c/;
+
+* ACSL
+
+1. ANSI/ISO C Specification Language
+
+** A Quick Example
+
+#+begin_src c
+/*@ requires \valid(a) && \valid(b);
+  @ ensures A: *a == \old(*b) ;
+  @ ensures B: *b == \old(*a) ;
+  @ assigns *a,*b ;
+  @*/
+void swap(int *a,int *b)
+{
+  int tmp = *a ;
+  *a = *b ;
+  *b = tmp ;
+}  
+#+end_src
+
+1. =requires \valid(a) && \valid(b);= entry assertion (also called pre
+   condition)
+
+1. =ensures A: *a == =\old(*b) ;= exit assertion  (also called post
+   condition)
+1. =assigns x;= The value of x at exit may be different from that at entry.
+1. =\valid(x)= builtin predicate: The value x is valid
+1. =\old(x)=  builtin : The value x had at entry
+
+
+
+1. Alexey Khoroshilov Mikhail Mandrykin, [[https://frama-c.com/download/framaCDay/FCSD17/talk/06_Khoroshilov_Mandrykin.pdf][Specifying and Proving
+   Correctness of Linux Kernel Components with ACSL]], 35+ slides, 2017,
+   Institute for System Programming of the Russian Academy of
+   Sciences; {pm: Has several Frama-C examples}
+
+1. https://frama-c.com/download/acsl-tutorial.pdf
+
+1. Jochen Burghardt Jens Gerlach Timon Lapawczyk, Former Authors:
+   Andreas Carben Liangliang Gu Kerstin Hartig Hans Pohl Juan Soto Kim
+   Völlinger, [[https://www.cs.umd.edu/class/spring2016/cmsc838G/frama-c/ACSL-by-Example-12.1.0.pdf][ACSL By Example: Towards a Verified C Standard Library]]",
+   155pp, 2016.
+
+
+* Plugins
+
+1. [[../FramaC/framac-plugins.org]] Table of Contents
+1. Plugin Architecture
+2. Frama-C++
+3. Value Analysis
+4. Weakest Preconditions
+5. Jesse: verification tool for C programs; front end for "Why"
+6. Astraver
+1. Why and [[http://why3.lri.fr/][Why3]]: proving tools
+
+
+* Examples and Exercises
+
+1. [[../FramaC/exercises.org]] 
+1. https://rv2016.imag.fr/wp-content/uploads/2016/10/Tutorial-Kosmatov-Signoles.pdf
+   Frama-C A Collaborative Framework for C Code Verification Tutorial
+   at RV 2016 Nikolai Kosmatov, Julien Signoles Madrid, September
+   27th, 2016
+
+
+* Perspective
+
+1. http://www.spark-2014.org/uploads/itp_2014_r610.pdf 25+ slides; "Are we there
+   yet? 20 Years of industrial theorem proving with Spark",  July 15,
+   2014
+
+* References
+
+1. https://www.cs.purdue.edu/homes/rompf/papers/amin-popl17b.pdf
+   LMS-Verify: Abstraction without Regret for Verified Systems
+   Programming Nada Amin∗ Tiark Rompf † ∗EPFL: {first.last}@epfl.ch †
+   Purdue University: {first}@purdue.edu
+
+1. https://frama-c.com/FCSD17.html Frama-C & SPARK Day 2017: Deductive
+   Verification in Frama-C and SPARK 2014: Past, Present and Future,
+   and other papers
+
+1. http://www.spark-2014.org/ About SPARK, Proof in Use,
+http://www.spark-2014.org/entries/detail/applied-formal-logic-searching-in-strings
+
+1. http://www.cs.cmu.edu/~drl/teaching/oplss13/ Programming and
+   Proving in Agda, OPLSS 2013
+1. http://wiki.portal.chalmers.se/agda/pmwiki.php?n=Main.Documentation Agda
+
+1. http://krakatoa.lri.fr/ Krakatoa is a verification tool for Java programs
+
+* End
+# Local variables:
+# after-save-hook: org-html-export-to-html
+# end:

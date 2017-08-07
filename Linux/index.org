@@ -1,0 +1,54 @@
+# -*- mode: org -*-
+#+DATE: 2017-06-08
+#+TITLE:  Proving Linux
+#+AUTHOR: Prabhaker Mateti
+#+HTML_LINK_HOME: ../../Top/index.html
+#+HTML_LINK_UP: ../
+#+HTML_HEAD: <style> P,li {text-align: justify} code {color: brown;} @media screen {BODY {margin: 10%} }</style>
+#+BIND: org-html-preamble-format (("en" "<a href=\"../../\"> ../../</a>"))
+#+BIND: org-html-postamble-format (("en" "<hr size=1>Copyright &copy; 2017 <a href=\"http://www.wright.edu/~pmateti\">www.wright.edu/~pmateti</a> &bull; %d"))
+#+STARTUP:showeverything
+#+OPTIONS: toc:0
+
+* Source Code
+
+1. [[https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/?h=v4.12][Linux 4.12]] as of 2017-07-02
+% du -sh .
+850M    .
+% time make menuconfig > /tmp/make-menuconfig.log &
+% /boot/config-4.10.0-22-generic:5941:warning: symbol value 'm' invalid for SND_DESIGNWARE_PCM
+-rw-rw-r-- 1 pmateti pmateti 209217 Jul  3 20:16 .config
+
+[[./make-std-err.txt]]
+
+* Specifications
+
+
+* Coverity
+
+1. [[../Coverity]]
+
+
+* Recent Vulnerabilitites
+
+1. [[../Linux/stack-clash-2017.txt]] June 19, 2017
+
+1. https://arstechnica.com/security/2017/06/12-year-old-security-hole-in-unix-based-oses-isnt-plugged-after-all/
+
+* References
+
+1.  Alexey Khoroshilov Mikhail Mandrykin, Specifying and Proving
+    Correctness of Linux Kernel Components with ACSL, [[https://frama-c.com/download/framaCDay/FCSD17/talk/06_Khoroshilov_Mandrykin.pdf][PDF]], 35+ slides,
+    2017, Institute for System Programming of the Russian Academy of
+    Sciences,
+
+1. Dawson Engeler, et al.  Discovering Bugs in Linux, 201x.
+
+1. Specifying and proving correctness of Linux kernel components with
+   ACSL,
+   https://frama-c.com/download/framaCDay/FCSD17/talk/06_Khoroshilov_Mandrykin.pdf
+
+* End
+# Local variables:
+# after-save-hook: org-html-export-to-html
+# end:

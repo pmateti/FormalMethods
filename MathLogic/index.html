@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-08-07 Mon 11:26 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Discrete Math + Logic</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Prabhaker Mateti" />
+<meta name="description" content="On Assertions in Software Engineering"
+ />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<style> P {text-align: justify} code, pre {color: brown;} @media screen {BODY {margin: 10%} }</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="../"> UP </a>
+ |
+ <a accesskey="H" href="../../"> HOME </a>
+</div><div id="preamble" class="status">
+<a href="../../"> ../../</a>
+</div>
+<div id="content">
+<h1 class="title">Discrete Math + Logic</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org84e0ce6">1. Overview</a></li>
+<li><a href="#orgb0083b6">2. Discrete Math</a></li>
+<li><a href="#org254d97a">3. Mathematical Logic</a>
+<ul>
+<li><a href="#orgbfc774d">3.1. Weaker/Stronger Predicates</a></li>
+<li><a href="#org02737a8">3.2. A Model for a WFF</a></li>
+</ul>
+</li>
+<li><a href="#orgd1a751f">4. Temporal Logic</a></li>
+<li><a href="#orgb8c49b7">5. References</a></li>
+<li><a href="#org5d7fc47">6. End</a></li>
+</ul>
+</div>
+</div>
+<p>
+Landing page for Discrete Math + Logic
+</p>
+
+<div id="outline-container-org84e0ce6" class="outline-2">
+<h2 id="org84e0ce6"><span class="section-number-2">1</span> Overview</h2>
+<div class="outline-text-2" id="text-1">
+<ol class="org-ol">
+<li>Assertions: Formal or Informal</li>
+<li>Informally stated assertions: Carefully written, but in English.</li>
+<li>Formally stated assertions: Discrete Math + Mathematical Logic</li>
+<li>Our treatment is in support of Automated Proofs of Assertions</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgb0083b6" class="outline-2">
+<h2 id="orgb0083b6"><span class="section-number-2">2</span> Discrete Math</h2>
+<div class="outline-text-2" id="text-2">
+<ol class="org-ol">
+<li>Sets, Sequences, Bags, Tables</li>
+<li>Trees: n-ary, (spatially) ordered trees, traversals, subtrees, forests</li>
+<li>Undirected and directed graphs, connected components</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org254d97a" class="outline-2">
+<h2 id="org254d97a"><span class="section-number-2">3</span> Mathematical Logic</h2>
+<div class="outline-text-2" id="text-3">
+<ol class="org-ol">
+<li>Propositional calculus</li>
+<li>Predicate calculus</li>
+<li>Higher Order Logic</li>
+</ol>
+</div>
+
+<div id="outline-container-orgbfc774d" class="outline-3">
+<h3 id="orgbfc774d"><span class="section-number-3">3.1</span> Weaker/Stronger Predicates</h3>
+<div class="outline-text-3" id="text-3-1">
+<ol class="org-ol">
+<li>Simple example: x &gt; 7 implies x &gt; 1.</li>
+<li>Consider: P implies Q (also written as P ⇒ Q). We say that P is
+<i>stronger</i> than Q. Alt: Q is <i>weaker</i> than P.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org02737a8" class="outline-3">
+<h3 id="org02737a8"><span class="section-number-3">3.2</span> A Model for a WFF</h3>
+<div class="outline-text-3" id="text-3-2">
+<ol class="org-ol">
+<li>Well-formed-formulae P and Q, in general, have free variables, x,
+y, z, &#x2026; Consider a particular assignment A of values for each of
+x, y, z that makes P come out True. A will also make Q True.</li>
+
+<li>In the context of programming, we can refer to this A as a "state".
+In logic, this is known as a model.</li>
+
+<li>Let C(Q) be the collection of such assignments that make Q come out
+as True.  Similarly, C(P).</li>
+
+<li>Then, C(P) is a subset of C(Q), if and when P is stronger than Q.</li>
+
+<li>If C(P) = C(Q), P is equivalent to Q (also written as P ⇔ Q, or P ≡
+Q).</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd1a751f" class="outline-2">
+<h2 id="orgd1a751f"><span class="section-number-2">4</span> Temporal Logic</h2>
+<div class="outline-text-2" id="text-4">
+<ol class="org-ol">
+<li><a href="../TemporalLogic/index.html">../TemporalLogic/index.html</a></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgb8c49b7" class="outline-2">
+<h2 id="orgb8c49b7"><span class="section-number-2">5</span> References</h2>
+<div class="outline-text-2" id="text-5">
+<ol class="org-ol">
+<li>MIT book, free PDF</li>
+<li>Lesliee Lamport, free PDF</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org5d7fc47" class="outline-2">
+<h2 id="org5d7fc47"><span class="section-number-2">6</span> End</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr size=1>Copyright &copy; 2017 <a href="mailto:pmateti@wright.edu">pmateti@wright.edu</a> &bull; <a href="http://www.wright.edu/~pmateti"> www.wright.edu/~pmateti</a>  2017-06-10
+</div>
+</body>
+</html>

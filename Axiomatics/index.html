@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Axiomatics</title>
+<!-- 2017-06-18 Sun 22:11 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Prabhaker Mateti" />
+<meta  name="description" content="Formal Methods"
+ />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<style> P,li {text-align: justify} code {color: brown;} @media screen {BODY {margin: 10%} }</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="../../Lectures"> UP </a>
+ |
+ <a accesskey="H" href="../../Top/index.html"> HOME </a>
+</div><div id="preamble" class="status">
+2017-05-30
+</div>
+<div id="content">
+<h1 class="title">Axiomatics</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Orientation</a></li>
+<li><a href="#sec-2">2. What is an Axiom?</a>
+<ul>
+<li><a href="#sec-2-1">2.1. Expectations</a></li>
+<li><a href="#sec-2-2">2.2. Dedekind-Peano Axioms [ 1889] for Numbers</a></li>
+<li><a href="#sec-2-3">2.3. Equality Relation</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Semantics of Assignment by an Axiom</a>
+<ul>
+<li><a href="#sec-3-1">3.1. {Q(e)} x := e {Q(x)}</a></li>
+<li><a href="#sec-3-2">3.2. Floyd-Hoare Triples {P} S {Q}</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Axiomatic Semantics</a></li>
+<li><a href="#sec-5">5. Axioms of an Ideal + Simple PL</a></li>
+<li><a href="#sec-6">6. Example: exchange x with y</a></li>
+<li><a href="#sec-7">7. Axiomatic Subset of C</a></li>
+<li><a href="#sec-8">8. References</a></li>
+<li><a href="#sec-9">9. End</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Orientation</h2>
+<div class="outline-text-2" id="text-1">
+<ol class="org-ol">
+<li>We get into a bit of philosophical underpinnings.
+</li>
+<li>Necessary in formal proofs of correctness of code.
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> What is an Axiom?</h2>
+<div class="outline-text-2" id="text-2">
+<ol class="org-ol">
+<li>An axiom is an expression in mathematical logic.
+</li>
+<li>We always consider a collection of axioms.
+</li>
+<li>Truthful?
+</li>
+<li>Any other expectations?
+</li>
+</ol>
+</div>
+
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Expectations</h3>
+<div class="outline-text-3" id="text-2-1">
+<ol class="org-ol">
+<li>A collection of axioms describe worlds of our interest
+<ol class="org-ol">
+<li>A world where all the axioms are [held to be] true.
+</li>
+<li>There can be worlds where one or more of the axioms are [held to
+be] false.  (We are not interested in these.)
+</li>
+<li>Must there be a world where all the axioms are true?
+</li>
+</ol>
+</li>
+
+<li>Axioms in a collection ought to be independent.  [No axiom is
+deducible from others.]
+</li>
+<li>The collection is expected to be not contradictory. [sound]
+</li>
+<li>The collection may not be "complete". [truth]
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> Dedekind-Peano Axioms [ 1889] for Numbers</h3>
+<div class="outline-text-3" id="text-2-2">
+<ol class="org-ol">
+<li>The 0 is a natural number.
+</li>
+<li>For every natural number n, S(n) is a natural number. [S is a function.]
+</li>
+<li>For all natural numbers m and n, m = n iff if S(m) = S(n).
+</li>
+<li>For every natural number n, S(n) = 0 is false.
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> Equality Relation</h3>
+<div class="outline-text-3" id="text-2-3">
+<ol class="org-ol">
+<li>The following are valid in First-Order Logic with Equality.
+</li>
+
+<li>For every natural number x, x = x. [reflexive]
+</li>
+<li>For all natural numbers x and y, if x = y, then y = x. [symmetric]
+</li>
+<li>For all natural numbers x, y and z, if x = y and y = z, then x = z. [transitive]
+</li>
+<li>For all a and b, if b is a natural number and a = b, then a is also
+a natural number. [Natural numbers are closed under equality.]
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Semantics of Assignment by an Axiom</h2>
+<div class="outline-text-2" id="text-3">
+<ol class="org-ol">
+<li>Consider <i>x := e</i>, where x is a variable, and e an expression.
+</li>
+
+<li>Assume that x is a whole variable, not, e.g., part of an array as in a[i].
+</li>
+
+<li>Assume that the value e computes is well-defined and of the same
+type as x.
+</li>
+</ol>
+</div>
+
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> {Q(e)} x := e {Q(x)}</h3>
+</div>
+
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Floyd-Hoare Triples {P} S {Q}</h3>
+<div class="outline-text-3" id="text-3-2">
+<ol class="org-ol">
+<li>S is code in some PL; P and Q are assertions.
+</li>
+<li>Th entire triplet yields true/false.
+</li>
+<li>{P} S {Q} is "operationally defined" as: For all states s that
+satisfy P, executing S on s, the resulting state s' is such that s'
+satisfies Q, if and when S terminates.
+</li>
+
+<li>Note that the above is about <i>partial correctness</i>: It omits
+termination.
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Axiomatic Semantics</h2>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Axioms of an Ideal + Simple PL</h2>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Example: exchange x with y</h2>
+<div class="outline-text-2" id="text-6">
+<ol class="org-ol">
+<li>Consider
+<div class="org-src-container">
+
+<pre class="src src-C">void exchange( int * x, int * y)
+{
+  int tmp = * x;
+  * x = * y;
+  * y = tmp;
+}
+</pre>
+</div>
+</li>
+
+<li>Is this "correct"? [wrt "what spec"? YKWIM]
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Axiomatic Subset of C</h2>
+<div class="outline-text-2" id="text-7">
+<ol class="org-ol">
+<li>Nothing to do with "axiomatic C compiler", by a company with that
+name.
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> References</h2>
+<div class="outline-text-2" id="text-8">
+<ol class="org-ol">
+<li>Gregory R. Andrews, Concurrent Programming: Principles and
+Practice, Benjamin/Cummings, 1991.  Errata TBD. Chapters 1 and 2:
+Required Reading.
+</li>
+
+<li>Mark Batty, Scott Owens, Susmit Sarkar, Peter Sewell, and Tjark
+Weber, Mathematizing C++ Concurrency, POPL 2011.  <a href="https://www.cl.cam.ac.uk/~pes20/cpp/popl085ap-sewell.pdf">PDF</a>,
+<a href="http://www.cl.cam.ac.uk/~pes20/cpp/">http://www.cl.cam.ac.uk/~pes20/cpp/</a> Recommended
+Reading.
+</li>
+
+<li>Soham Chakraborty, Viktor Vafeiadis, Formalizing the Concurrency
+Semantics of an LLVM Fragment, Max Planck Institute for Software
+Systems (MPI-SWS), Germany, 2016/12/7;
+<a href="http://plv.mpi-sws.org/llvmcs/paper.pdf">http://plv.mpi-sws.org/llvmcs/paper.pdf</a>
+</li>
+
+<li><a href="https://gcc.gnu.org/wiki">https://gcc.gnu.org/wiki</a>
+</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> End</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr size=1>Copyright &copy; 2017 <a href="mailto:pmateti@wright.edu">pmateti@wright.edu</a> &bull; <a href="http://www.wright.edu/~pmateti">www.wright.edu/~pmateti</a> &bull; 2017-05-30
+</div>
+</body>
+</html>

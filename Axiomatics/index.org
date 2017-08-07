@@ -1,0 +1,124 @@
+# -*- mode: org -*-
+#+DATE: 2017-05-30
+#+TITLE:  Axiomatics
+#+AUTHOR: Prabhaker Mateti
+#+DESCRIPTION:  Formal Methods
+#+HTML_LINK_HOME: ../../Top/index.html
+#+HTML_LINK_UP: ../../Lectures
+#+HTML_HEAD: <style> P,li {text-align: justify} code {color: brown;} @media screen {BODY {margin: 10%} }</style>
+#+BIND: org-html-preamble-format (("en" "%d"))
+#+BIND: org-html-postamble-format (("en" "<hr size=1>Copyright &copy; 2017 %e &bull; <a href=\"http://www.wright.edu/~pmateti\">www.wright.edu/~pmateti</a> &bull; %d"))
+
+#+STARTUP:showeverything
+#+OPTIONS: toc:2
+
+* Orientation
+
+1. We get into a bit of philosophical underpinnings.
+1. Necessary in formal proofs of correctness of code.
+
+* What is an Axiom?
+
+1. An axiom is an expression in mathematical logic.
+1. We always consider a collection of axioms.
+1. Truthful?
+1. Any other expectations?
+
+** Expectations
+
+2. A collection of axioms describe worlds of our interest
+   1. A world where all the axioms are [held to be] true.
+   1. There can be worlds where one or more of the axioms are [held to
+      be] false.  (We are not interested in these.)
+   1. Must there be a world where all the axioms are true?
+
+4. Axioms in a collection ought to be independent.  [No axiom is
+   deducible from others.]
+3. The collection is expected to be not contradictory. [sound]
+3. The collection may not be "complete". [truth]
+
+** Dedekind-Peano Axioms [ 1889] for Numbers
+
+1. The 0 is a natural number.
+1. For every natural number n, S(n) is a natural number. [S is a function.]
+1. For all natural numbers m and n, m = n iff if S(m) = S(n).
+1. For every natural number n, S(n) = 0 is false.
+
+** Equality Relation
+
+1. The following are valid in First-Order Logic with Equality.
+
+1. For every natural number x, x = x. [reflexive]
+1. For all natural numbers x and y, if x = y, then y = x. [symmetric]
+1. For all natural numbers x, y and z, if x = y and y = z, then x = z. [transitive]
+1. For all a and b, if b is a natural number and a = b, then a is also
+   a natural number. [Natural numbers are closed under equality.]
+
+* Semantics of Assignment by an Axiom
+
+1. Consider /x := e/, where x is a variable, and e an expression.
+
+1. Assume that x is a whole variable, not, e.g., part of an array as in a[i].
+
+1. Assume that the value e computes is well-defined and of the same
+   type as x.
+
+** {Q(e)} x := e {Q(x)}
+
+** Floyd-Hoare Triples {P} S {Q}
+
+1. S is code in some PL; P and Q are assertions.
+1. Th entire triplet yields true/false.
+1. {P} S {Q} is "operationally defined" as: For all states s that
+   satisfy P, executing S on s, the resulting state s' is such that s'
+   satisfies Q, if and when S terminates.
+
+2. Note that the above is about /partial correctness/: It omits
+   termination.
+
+* Axiomatic Semantics
+
+* Axioms of an Ideal + Simple PL
+
+* Example: exchange x with y
+
+1. Consider
+   #+begin_src C
+void exchange( int * x, int * y)
+{
+  int tmp = * x;
+  * x = * y;
+  * y = tmp;
+}
+#+end_src
+
+1. Is this "correct"? [wrt "what spec"? YKWIM]
+
+* Axiomatic Subset of C
+
+1. Nothing to do with "axiomatic C compiler", by a company with that
+   name.
+
+* References
+
+1. Gregory R. Andrews, Concurrent Programming: Principles and
+   Practice, Benjamin/Cummings, 1991.  Errata TBD. Chapters 1 and 2:
+   Required Reading.
+
+1. Mark Batty, Scott Owens, Susmit Sarkar, Peter Sewell, and Tjark
+   Weber, Mathematizing C++ Concurrency, POPL 2011.  [[https://www.cl.cam.ac.uk/~pes20/cpp/popl085ap-sewell.pdf][PDF]],
+   http://www.cl.cam.ac.uk/~pes20/cpp/ Recommended
+   Reading.
+
+1. Soham Chakraborty, Viktor Vafeiadis, Formalizing the Concurrency
+   Semantics of an LLVM Fragment, Max Planck Institute for Software
+   Systems (MPI-SWS), Germany, 2016/12/7;
+   http://plv.mpi-sws.org/llvmcs/paper.pdf
+
+1. https://gcc.gnu.org/wiki
+
+
+* End
+# Local variables:
+# after-save-hook: org-html-export-to-html
+# end:

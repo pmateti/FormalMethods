@@ -1,0 +1,70 @@
+# -*- mode: org -*-
+#+DATE: 2017-06-10
+#+TITLE: Discrete Math + Logic
+#+AUTHOR: Prabhaker Mateti
+#+HTML_LINK_UP: ../
+#+HTML_LINK_HOME: ../../
+#+DESCRIPTION: On Assertions in Software Engineering
+#+HTML_HEAD: <style> P {text-align: justify} code, pre {color: brown;} @media screen {BODY {margin: 10%} }</style>
+#+BIND: org-html-preamble-format (("en" "<a href=\"../../\"> ../../</a>"))
+#+BIND: org-html-postamble-format (("en" "<hr size=1>Copyright &copy; 2017 %e &bull; <a href=\"http://www.wright.edu/~pmateti\"> www.wright.edu/~pmateti</a>  %d"))
+#+STARTUP:showeverything
+#+OPTIONS: toc:2
+
+Landing page for Discrete Math + Logic
+
+* Overview
+
+1. Assertions: Formal or Informal
+1. Informally stated assertions: Carefully written, but in English.
+1. Formally stated assertions: Discrete Math + Mathematical Logic 
+1. Our treatment is in support of Automated Proofs of Assertions
+
+* Discrete Math
+
+1. Sets, Sequences, Bags, Tables
+1. Trees: n-ary, (spatially) ordered trees, traversals, subtrees, forests
+1. Undirected and directed graphs, connected components
+
+* Mathematical Logic
+
+1. Propositional calculus
+1. Predicate calculus
+1. Higher Order Logic
+
+** Weaker/Stronger Predicates
+
+1. Simple example: x > 7 implies x > 1.
+1. Consider: P implies Q (also written as P ⇒ Q). We say that P is
+   /stronger/ than Q. Alt: Q is /weaker/ than P.
+
+** A Model for a WFF
+
+1. Well-formed-formulae P and Q, in general, have free variables, x,
+   y, z, ... Consider a particular assignment A of values for each of
+   x, y, z that makes P come out True. A will also make Q True.
+
+1. In the context of programming, we can refer to this A as a "state".
+   In logic, this is known as a model.
+
+1. Let C(Q) be the collection of such assignments that make Q come out
+   as True.  Similarly, C(P).
+
+1. Then, C(P) is a subset of C(Q), if and when P is stronger than Q.
+
+1. If C(P) = C(Q), P is equivalent to Q (also written as P ⇔ Q, or P ≡
+   Q).
+
+* Temporal Logic
+
+1. [[../TemporalLogic/index.org]]
+
+* References
+
+1. MIT book, free PDF
+1. Lesliee Lamport, free PDF
+
+* End
+# Local variables:
+# after-save-hook: org-html-export-to-html
+# end:
