@@ -1,0 +1,46 @@
+# -*- mode: org -*-
+#+DATE: 2017-06-10
+#+TITLE: Assertions: References
+#+AUTHOR: Prabhaker Mateti
+#+HTML_LINK_UP: ../
+#+HTML_LINK_HOME: ../../
+#+DESCRIPTION: On Assertions in Software Engineering
+#+HTML_HEAD: <style> P {text-align: justify} code, pre {color: brown;} @media screen {BODY {margin: 10%} }</style>
+#+BIND: org-html-preamble-format (("en" "<a href=\"../../\"> ../../</a>"))
+#+BIND: org-html-postamble-format (("en" "<hr size=1>Copyright &copy; 2017 %e &bull; <a href=\"http://www.wright.edu/~pmateti\"> www.wright.edu/~pmateti</a>  %d"))
+#+STARTUP:showeverything
+#+OPTIONS: toc:2
+
+
+* References
+
+1. Bertrand Meyer, Applying "Design by Contract", IEEE Computer, 1992
+   [[./meyer-design-by-contract-1992.pdf]] (Ignore the Eiffel related
+   statements.)  Required Reading.
+1. http://google-opensource.blogspot.com/2011/02/contracts-for-java.html
+   Posted: Friday, February 4, 2011
+1. https://github.com/nhatminhle/cofoja 2016
+
+1. CodeGuru.com, Visual C++ Debugging: How to use 'ASSERT' and deal
+   with assertions failures?
+   http://www.codeguru.com/forum/showthread.php?t=315371 Recommended
+   Reading.
+1. C++, assert - C++ Reference http://www.cplusplus.com/reference/clibrary/cassert/assert/ Required Reading.
+1. Donald E Knuth, ``A Literate Program [Most Common Words],'' Communications of the ACM, Vol. 29, No. 6, 471-483. Required Reading.
+1. Prabhaker Mateti, Practical Advice on Writing Pre- Post-Conditions for Real Programs, http://www.cs.wright.edu/~pmateti/ Courses/433/Notes/prepost-notes.html Required Reading.
+1. Prabhaker Mateti, Two Specifications of Tabulated Equations. tabeqn.pdf (Later) Required Reading.
+1. Microsoft.com, MFC Assertions http://msdn.microsoft.com/en-us/library/c72tsd3t(VS.80).aspx Recommended Reading.
+1. Oracle.com, Programming With Assertions in Java, http://docs.oracle.com/javase/7/docs/ technotes/ guides/ language/assert.html Required Reading.
+
+1. Gries, David, The Science of Programming, Springer, 2012 [shouldn't
+   this be 1981?].  Highy Recommended.
+
+1. Alagic, Suad, and Michael A. Arbib. The Design of Well-Structured
+   and Correct Programs. Springer Science & Business Media, 2013.
+   Highy Recommended. 
+
+
+* End
+# Local variables:
+# after-save-hook: org-html-export-to-html
+# end:

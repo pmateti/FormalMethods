@@ -1,0 +1,29 @@
+# -*- mode: org -*-
+#+DATE: 2017-06-10
+#+TITLE: On Assertions
+#+AUTHOR: Prabhaker Mateti
+#+HTML_LINK_UP: ../
+#+HTML_LINK_HOME: ../../
+#+DESCRIPTION: On Assertions in Software Engineering
+#+HTML_HEAD: <style> P {text-align: justify} code, pre {color: brown;} @media screen {BODY {margin: 10%} }</style>
+#+BIND: org-html-preamble-format (("en" "<a href=\"../../\"> ../../</a>"))
+#+BIND: org-html-postamble-format (("en" "<hr size=1>Copyright &copy; 2017 %e &bull; <a href=\"http://www.wright.edu/~pmateti\"> www.wright.edu/~pmateti</a>  %d"))
+#+STARTUP:showeverything
+#+OPTIONS: toc:0
+
+* Table of Contents
+
+1. [[./assertions-101.org][Assertions 101]]
+   1. Entry Assertions
+   2. Exit Assertions
+   4. Loop Invariants
+5. [[./class-invariants.org][Class Invariants]]
+1. [[./assertions-cpp.org][Assertions in C++]]
+4. [[./exercises.org][Exercises]]
+   1. [[../Examples/QuickSort/][QuickSort]]
+1. [[./refs.org][References]]
+
+* End
+# Local variables:
+# after-save-hook: org-html-export-to-html
+# end:

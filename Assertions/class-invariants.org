@@ -1,0 +1,28 @@
+# -*- mode: org -*-
+#+DATE: 2017-06-10
+#+TITLE: Class Invariants
+#+AUTHOR: Prabhaker Mateti
+#+HTML_LINK_UP: ../
+#+HTML_LINK_HOME: ../../
+#+DESCRIPTION: On Assertions in Software Engineering
+#+HTML_HEAD: <style> P {text-align: justify} code, pre {color: brown;} @media screen {BODY {margin: 10%} }</style>
+#+BIND: org-html-preamble-format (("en" "<a href=\"../../\"> ../../</a>"))
+#+BIND: org-html-postamble-format (("en" "<hr size=1>Copyright &copy; 2017 %e &bull; <a href=\"http://www.wright.edu/~pmateti\"> www.wright.edu/~pmateti</a>  %d"))
+#+STARTUP:showeverything
+#+OPTIONS: toc:2
+
+1. OOP Classes and Abstract Data Types are strongly coupled.  This
+   coupling is best exhibited through class invariants.
+
+1. Every class has an assertion that describes the relationships among
+   its data members and public methods.  This called the class invariant.
+
+1. See [[../Examples/SmallSet/]] for an example that starts out from
+   designing a set class, with the expected public methods such as
+   add-an-element, etc.
+
+
+* End
+# Local variables:
+# after-save-hook: org-html-export-to-html
+# end:

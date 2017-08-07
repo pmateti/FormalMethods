@@ -1,0 +1,69 @@
+# -*- mode: org -*-
+#+DATE: 2017-06-10
+#+TITLE: On Assertions
+#+AUTHOR: Prabhaker Mateti
+#+HTML_LINK_UP: ../
+#+HTML_LINK_HOME: ../../
+#+DESCRIPTION: On Assertions in Software Engineering
+#+HTML_HEAD: <style> P {text-align: justify} code, pre {color: brown;} @media screen {BODY {margin: 10%} }</style>
+#+BIND: org-html-preamble-format (("en" "<a href=\"../../\"> ../../</a>"))
+#+BIND: org-html-postamble-format (("en" "<hr size=1>Copyright &copy; 2017 %e &bull; <a href=\"http://www.wright.edu/~pmateti\"> www.wright.edu/~pmateti</a>  %d"))
+#+STARTUP:showeverything
+#+OPTIONS: toc:2
+
+* Assertions Intro
+
+1. Assertions: Formal or Informal
+1. [[./assertions-in-the-small.html][Tiny Examples]] Just tiny^2 examples
+2. [[./practical-advice.org][Practical-Advice]] on Assertions
+3. Partial Correctness + Termination
+   1. Hoare's Axiomatics is only about Partial Correctness, no
+      termination
+   2. Dijkstra's Weakest Preconditions (Predicate Transformers)
+      include termination also
+   3. An Unsolved Problem (as of 2017): The [[./3np1.org][3n+1]] Termination Problem
+
+* Entry and Exit Assertions
+
+1. Context: Methods/ Procs/ Functions
+
+** Entry Assertions
+1. An Entry Assertion ought to be true before entering a method.
+1. This should be guaranteed by the caller.
+1. The method assumes this.
+1. It does not check it.  If it does, the Entry Assertion of the
+   method is simply "true".
+
+** Exit Assertions
+
+1. An Exit Assertion is guaranteed to be true just before exiting a
+   method.
+1. This is assumed by the caller upon return.  The caller does not
+   [have to] check it.  If it does, the exit assertion does not
+   change.  Caller is merely wasting CPU cycles.
+
+** Exercises
+
+1. Look up the man pages for a few of the C standard library methods,
+   and give entry + exit assertions.  E.g.,
+   1. Specify =double sqrt(double x)=  lookup =man 3 sqrt=
+
+1. Specify Bubble Sort.
+1. Does the above apply to QuickSort?
+1. QuickSort uses a method often named partiton.  Spec it.
+1. How do you specify that the array elements going in are the same as
+   that come after a sort?
+
+* Loop Invariants
+
+1. An assertion A placed at a point in a loop is an /invariant/ if the
+   it remains true at every iteration.
+
+1. We want the strongest loop invariant.
+
+
+
+* End
+# Local variables:
+# after-save-hook: org-html-export-to-html
+# end:
